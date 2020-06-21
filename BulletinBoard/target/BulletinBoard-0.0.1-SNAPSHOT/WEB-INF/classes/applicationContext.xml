@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!-- connection pooling사용하기 위한  -->
+<!-- 
+	<context:property-placeholder location="classpath*:application-properties.xml"/>
+	<context:annotation-config /> 톰캣 사용시 추가해줘야함 / 어노테이션 기반 설정 활성화
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		p:driverClassName="${database.driverClassName}"
+		p:url="${database.url}"
+		p:username="${database.username}"
+		p:password="${database.password}"
+	/>
+	-->
+	
+	<context:component-scan 
+      base-package="org.springframework.samples.web.service" />
+      
+
+	
+	<!-- 밑에 코드에서 변경가능/ 내가 jdbc를 사용할 지 아니면 mybatis를 사용할 지  -->
+	
+	<!-- dataSource에서 connection pool를 관리하고 있음 -->
+	<!-- spring jdbc 사용시 -->
+	<!-- 
+	<bean id="userDao" class="org.springframework.samples.web.dao.users.JdbcUserDao"
+		p:dataSource-ref="dataSource"/>
+	-->
+		
+	<!-- SqlSessionTemplate 주입  -->
+<!-- <bean id="userDao" class="org.springframework.samples.web.dao.users.MyBatisUserDao"
+		p:sqlSession-ref="sqlSession"/>  // Autowired를 해야 이부분도 한다.-->
+		<!--  mybatis는 dataSource가 아니라 sqlSession을 받는다.  -->
+	
+</beans>

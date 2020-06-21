@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd"><!-- 순서 중요(dtd에 나와있는 순서가 중요)  -->
+<configuration>
+	<typeAliases> <!-- 이걸 지정하면 UserMapper.xml의 resultType의 코드를 줄일 수 있다. -->
+		<package name="org.springframework.samples.web.domain"/>
+	</typeAliases>
+	<!-- applicationContext.xml에서 지정해줬으므로 이 부분은 없어도 됌 
+ 	<environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost/mysql?characterEncoding=utf8"/>
+        <property name="username" value="mysql"/>
+        <property name="password" value="1111"/>
+      </dataSource>
+    </environment>
+  </environments>  
+  -->
+  <!-- 매퍼관리 -->
+  <mappers>
+    <mapper resource="UserMapper.xml"/>
+ 	<mapper resource="BoardMapper.xml"/>
+ 	<mapper resource="ReplyMapper.xml"/>
+  </mappers>
+</configuration>

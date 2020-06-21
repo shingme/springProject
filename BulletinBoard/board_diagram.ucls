@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.0" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="org.springframework.samples.web.AccountController" project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/AccountController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="263" width="319" x="1408" y="105"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="2" language="java" name="org.springframework.samples.web.dao.mybatis.UserDao" project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/dao/mybatis/UserDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="119" width="225" x="2604" y="588"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="3" language="java" name="org.springframework.samples.web.domain.User" project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/domain/User.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="479" width="237" x="868" y="588"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="org.springframework.samples.web.dao.mybatis.MyBatisBoardDao" 
+    project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/dao/mybatis/MyBatisBoardDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="299" width="225" x="2047" y="105"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="org.springframework.samples.web.domain.UserSession" project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/domain/UserSession.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="203" x="868" y="105"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="org.springframework.samples.web.domain.Authenticate" project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/domain/Authenticate.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="227" width="203" x="106" y="105"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="org.springframework.samples.web.domain.Board" project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/domain/Board.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="443" width="236" x="349" y="105"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="org.springframework.samples.web.BoardController" project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/BoardController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="263" width="240" x="1767" y="105"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="org.springframework.samples.web.domain.Reply" project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/domain/Reply.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="389" width="203" x="625" y="105"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="10" language="java" name="org.springframework.samples.web.service.BulletinFacade" 
+    project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/service/BulletinFacade.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="281" width="252" x="1767" y="588"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="11" language="java" name="org.springframework.samples.web.dao.mybatis.JdbcUserDao" project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/dao/mybatis/JdbcUserDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="155" width="225" x="2604" y="105"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="org.springframework.samples.web.domain.BoardPager" project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/domain/BoardPager.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="425" width="257" x="1111" y="105"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="org.springframework.samples.web.service.BulletinFacadeImpl" 
+    project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/service/BulletinFacadeImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="317" width="252" x="2312" y="105"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="14" language="java" name="org.springframework.samples.web.dao.mybatis.BoardDao" project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/dao/mybatis/BoardDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="227" width="225" x="2180" y="588"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="15" language="java" name="org.springframework.samples.web.dao.mybatis.MyBatisUserDao" 
+    project="BulletinBoard" 
+    file="/BulletinBoard/src/main/java/org/springframework/samples/web/dao/mybatis/MyBatisUserDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="173" width="225" x="2869" y="105"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="16">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="17" name="bulletinFacade"/>      
+      <multiplicity id="18" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="19">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="20" name="user"/>      
+      <multiplicity id="21" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="22">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <realization id="23">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <association id="24">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="25" name="boardDao"/>      
+      <multiplicity id="26" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="27">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <realization id="28">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <association id="29">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="30" name="userDao"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="32">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="33" name="bulletinFacade"/>      
+      <multiplicity id="34" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

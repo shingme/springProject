@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper"><!-- 쿼리 구문들의 전체 패키기 이름으로 볼 수 있다.  -->
+ 
+<select id="boardList" parameterType="boardPager" resultType="board" >
+select b_no,
+	   b_id,
+	   b_title,
+	   b_text,
+	   b_see,
+ 	   DATE_FORMAT(b_date, '%Y.%m.%d %H:%i:%s') AS b_date
+ from (
+ 	select * from BULLETINBOARD ORDER BY b_date DESC
+ ) BULLETINBOARD limit #{start},#{end}
+
+</select>
+
+<select id="boardListCount" resultType="Integer">
+select count(*) from BULLETINBOARD
+</select>
+
+<select id="findByBoard" resultType="board">
+select b_no,
+	   b_id,
+	   b_title,
+	   b_text,
+	   b_see,
+ 	   DATE_FORMAT(b_date, '%Y.%m.%d %H:%i:%s') AS b_date
+from BULLETINBOARD where b_no =  #{b_no}
+</select>
+
+ <update id="updateSee" parameterType="board">
+ 	update BULLETINBOARD set
+ 	b_see = b_see+1 where b_no = #{b_no}
+ </update>
+  
+ <insert id="create"  parameterType="board" useGeneratedKeys="true" keyProperty="b_no">
+ 	insert into BULLETINBOARD (b_id, b_title, b_text, b_date)
+	values (#{b_id}, #{b_title}, #{b_text}, now())
+ </insert>
+ 
+ <update id="update" parameterType="board">
+ 	update BULLETINBOARD set
+ 	b_title = #{b_title}, b_text = #{b_text} where b_no = #{b_no}
+ </update>
+ 
+ <delete id="delete" parameterType="board">
+ 	delete from BULLETINBOARD where b_no = #{b_no}
+ </delete>
+ 
+</mapper>

@@ -1,0 +1,64 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+   
+   <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	<html>
+ 	<head>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 	
+ 	<title>게시판</title>
+ 	<link href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ 	</head>
+	 <body>
+	 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	 	<script type = "text/javascript" src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.min.js"></script>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+           
+         <center><h2>NATURE FORUM</h2></center>
+         <div>
+            <ul class="nav nav-tabs" role="tablist" id="myTap">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">HOME</a></li>
+              <c:choose>
+               <c:when test="${empty userSession.user}">
+              <li role="persentation"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">로그인</a></li>
+              <li><a href="<c:url value ='/user/signUp'/>">회원가입</a></li>         
+              </c:when>
+              <c:otherwise>  
+              <li><a href="<c:url value='/user/logout'/>">로그아웃</a></li>
+              <li><a href="<c:url value='/user/${userSession.user.userId }/signUp'/>">개인정보수정</a></li>  
+              <li><a href="<c:url value='/board'><c:param name='pageBlock' value='1'/></c:url>">게시판</a></li>
+              <li><a href="<c:url value='/newsList'><c:param name='pageBlock' value='1'/></c:url>">최신 뉴스</a></li>
+              <c:choose>
+				<c:when test="${ userSession.user.userId == 'shingme'}">
+					<h3>안녕하세요. 관리자님</h3>
+				</c:when>
+				<c:otherwise>
+					<h3>안녕하세요. ${userSession.user.userId } 님</h3>
+				</c:otherwise>
+				</c:choose>
+              </c:otherwise>
+              </c:choose>     
+            </ul>
+            
+           <div class="tab_content">
+        	<div role="tabpanel" class="tab-pane active" id="home"> asdf</div>
+        	<div role="tabpanel" class="tab-pane" id="login"> ggg</div>
+       	   </div>
+       	   
+       	   <script>
+       	   	$(function(){
+       	   		$('#myTab a[href="/user/loginForm"]').tab('show')
+       	   	})
+       	   </script>
+        
+          </div>
+        </div>
+        
+       
+        
+   </div>
+      </body>
+      </html>
+      

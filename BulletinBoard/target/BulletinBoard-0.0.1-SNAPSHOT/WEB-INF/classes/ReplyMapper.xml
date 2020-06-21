@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="replyMapper"><!-- 쿼리 구문들의 전체 패키기 이름으로 볼 수 있다.  -->
+ <resultMap type="reply" id="replyResultMap">
+ 	<id column="r_no" property="no"/>
+ 	<result column="r_boardNo" property="boardNo"/>
+ 	<result column="r_id" property="id"/>
+ 	<result column="r_comment" property="comment"/>
+ 	<result column="r_date" property="date"/>
+ </resultMap>
+ 
+ <insert id="insert" parameterType="reply" useGeneratedKeys="true" keyProperty="r_no">
+ 	insert into reply (r_boardNo, r_id, r_comment, r_date)
+ 	values (#{boardNo}, #{id}, #{comment}, now())
+ </insert>
+ 
+ <select id="selectByBoardNo" resultMap="replyResultMap">
+ 	select r_no, r_boardNo, r_id, r_comment, DATE_FORMAT(r_date, '%Y.%m.%d %H:%i:%s') AS r_date 
+ 	from reply where r_boardNo = #{boardNo} ORDER BY r_date ASC
+ </select> 
+ 
+ <select id="selectReplyRecent" resultMap="replyResultMap">
+ 	select r_no, r_boardNo, r_id, r_comment, DATE_FORMAT(r_date, '%Y.%m.%d %H:%i:%s') AS r_date
+ 	 from (
+ 		select * from reply where r_boardNo = #{boardNo} ORDER BY r_no DESC
+ 	) reply limit 0,1
+ </select>
+ </mapper>

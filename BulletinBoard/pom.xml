@@ -1,0 +1,227 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.springframework.samples.service.service</groupId>
+  <artifactId>BulletinBoard</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+    <properties>
+
+		<!-- Generic properties -->
+		<java.version>1.6</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
+		<!-- Web -->
+		<jsp.version>2.2</jsp.version>
+		<jstl.version>1.2</jstl.version>
+		<servlet.version>2.5</servlet.version>
+		
+	
+		<!-- Spring 매번 버전이 업그레이드 될 때마다 직접 변경 안해주고 자동으로 하기 위해서 여기서 명시해주고 밑에는 ${}를 이용해주면 된다. -->
+		<spring-framework.version>4.3.7.RELEASE</spring-framework.version>
+
+		<!-- Hibernate / JPA -->
+		<hibernate.version>4.2.1.Final</hibernate.version>
+
+		<!-- Logging -->
+		<logback.version>1.0.13</logback.version>
+		<slf4j.version>1.7.5</slf4j.version>
+
+		<!-- Test -->
+		<junit.version>4.11</junit.version>
+		
+		<apachetiles.version>3.0.5</apachetiles.version> 
+
+
+	</properties>
+	
+	<dependencies>
+	
+	<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+	
+		<!-- Spring MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+		
+		<!-- Other Web dependencies -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>${jsp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>1.9.5</version>
+			<scope>test</scope>
+		</dependency>
+	
+	
+	
+		<!-- Spring and Transactions -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+
+		<!-- Logging with SLF4J & LogBack -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		
+		
+		<dependency>
+   			<groupId>javax.el</groupId>
+   			<artifactId>javax.el-api</artifactId>
+   			<version>2.2.4</version>
+		</dependency>
+		<dependency>
+   			<groupId>org.glassfish.web</groupId>
+   			<artifactId>javax.el</artifactId>
+   			<version>2.2.4</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.1.1.Final</version>
+		</dependency>
+		
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		
+		<!-- Test Artifacts -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring-framework.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		
+		<!-- MyBatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+   		 	<artifactId>mybatis</artifactId>
+ 	 	 	<version>3.2.5</version>
+		</dependency>
+		<dependency>
+      		<groupId>org.mybatis</groupId>
+      		<artifactId>mybatis-spring</artifactId>
+      		<version>1.2.2</version>
+    	</dependency>
+    	
+    	
+    	<!-- json 사용 -->
+    	<dependency>
+        	<groupId>net.sf.json-lib</groupId>
+        	<artifactId>json-lib-ext-spring</artifactId>
+        	<version>1.0.2</version>
+        </dependency> 
+        
+          <!-- Jackson -->
+   		 <dependency>
+      		<groupId>com.fasterxml.jackson.core</groupId>
+      		<artifactId>jackson-annotations</artifactId>
+      		<version>2.7.5</version>
+    	</dependency>
+
+    	<dependency>
+   		   <groupId>com.fasterxml.jackson.core</groupId>
+      		<artifactId>jackson-core</artifactId>
+      		<version>2.7.5</version>
+    	</dependency>
+
+    	<dependency>
+      		<groupId>com.fasterxml.jackson.core</groupId>
+      		<artifactId>jackson-databind</artifactId>
+      		<version>2.7.5</version>
+    	</dependency>	
+    	
+    	<dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+    	
+    	<!-- json형태 오픈api를 사용하기 위함 -->
+		 <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        
+        <!-- Apache Tiles -->
+        <dependency>
+        	<groupId>org.apache.tiles</groupId>
+        	<artifactId>tiles-core</artifactId>
+        	<version>${apachetiles.version}</version> 
+        </dependency> 
+        
+        <dependency> 
+        	<groupId>org.apache.tiles</groupId>
+        	<artifactId>tiles-api</artifactId> 
+        	<version>${apachetiles.version}</version> 
+        </dependency>
+        <dependency> 
+        	<groupId>org.apache.tiles</groupId> 
+        	<artifactId>tiles-servlet</artifactId> 
+        	<version>${apachetiles.version}</version> 
+        </dependency> 
+        <dependency> 
+        	<groupId>org.apache.tiles</groupId> 
+        	<artifactId>tiles-jsp</artifactId> 
+        	<version>${apachetiles.version}</version> 
+        </dependency>
+
+    	
+	</dependencies>	
+</project>

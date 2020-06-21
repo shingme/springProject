@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions> <!-- base_layout // 페이지 레이아웃을 지정하는 곳, 각각의 공통 조각 지정 -->
+	<definition name="base_layout"
+		template="/WEB-INF/view/tiles/template/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="menu"
+			value="/WEB-INF/view/tiles/template/menu.jsp" />
+		<put-attribute name="body" value="" /> 
+		
+	</definition>
+
+<!--공통이 아닌 부분 지정  -->
+	
+
+	<definition name="*" extends="base_layout"> <!-- extends= "base_layout"는 위의 기본설정을 확장하여 바뀌는 부분을 지정 -->
+		<put-attribute name="title" value="Welcome"/>
+		
+		<put-attribute name="body"
+			value="/WEB-INF/view/{1}.jsp" />
+	</definition>
+	
+	<definition name="*/*" extends="base_layout"> <!-- extends= "base_layout"는 위의 기본설정을 확장하여 바뀌는 부분을 지정 -->
+		<put-attribute name="title" value="Welcome"/>
+		<put-attribute name="body"
+			value="/WEB-INF/view/{1}/{2}.jsp" />
+	</definition>
+	
+	
+	
+	
+ 
+ 	<!-- <definition name="tiles/Category" extends="base_layout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/tiles/Category.jsp" />
+	</definition>
+
+	<definition name="tiles/SignonForm" extends="base_layout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/tiles/SignonForm.jsp" />			
+	</definition>
+	
+	<definition name="tiles/EditAccountForm" extends="base_layout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/tiles/EditAccountForm.jsp" />			
+	</definition>
+  -->
+</tiles-definitions>

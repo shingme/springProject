@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Uncomment and your base-package here: -->
+         <context:component-scan
+            base-package="org.springframework.samples.web"/>  <!--  이 순서 지키기 컨트롤러가 이 패키지 안에 있다. 컨트롤러 Bean   -->
+    <mvc:annotation-driven /> <!-- 어노테이션 방식의 컨트롤러를 사용할 때 필요한 DispatcherServlet 전략빈을 자동으로 등록해준다.//어노테이션 활성화 -->
+
+
+
+	<!-- ========================= TILES VIEW RESOLVER ========================= -->
+    <bean id="tilesViewResolver"
+		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+        <property name="order" value="1"/>
+    </bean>
+    
+    <!-- ========================= TILES VIEW DEFINITIONS ========================= -->
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/view/tiles/template/tilesdef.xml</value>
+            </list>
+        </property>
+    </bean>	
+    
+
+	<!--  tiles view가 존재하지 않을 경우 JSP view 이용 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> <!-- 사용자에게 보여줄 화면을 찾는 / 뷰 이름을 뷰에 연결 -->
+	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
+	        <property name="prefix" value="/WEB-INF/view/"/> <!-- jsp나 view 페이지를 두어 클라이언트가 직접 접근하지 못하도록 보호하는 것이 바람직! 이렇게 하면 된다. -->
+	        <property name="suffix" value=".jsp"/>
+	        <property name="order" value="2" />	
+	</bean>
+	
+	<!-- 모든 요청(<url-pattern>/</url-pattern>) 을 스프링의 디스패처서블릿이 처리하게될경우 js, css, 이미지등 리소스 파일을 불러오는 문제가 생긴다. -->
+	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
+	     
+	<!-- json --> 
+	<!-- 아이디 jsonView는 컨트롤러에서 리턴해주는 값이랑 매핑되는 부분 -->
+	<bean id="jsonView" class="net.sf.json.spring.web.servlet.view.JsonView">
+		<property name="contentType" value="application/json;charset=UTF-8"/> <!-- ajax로 json값 넘겨줄 때 한글깨짐 방지 -->
+	</bean>
+     <bean id="beanNameResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0"/>
+
+	
+	<!-- messages.propertis를 읽어드려야 한다. -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="messages"
+		p:defaultEncoding="UTF-8"
+	/>
+
+</beans>
