@@ -19,7 +19,7 @@
 		
 	
 		<!-- Spring 매번 버전이 업그레이드 될 때마다 직접 변경 안해주고 자동으로 하기 위해서 여기서 명시해주고 밑에는 ${}를 이용해주면 된다. -->
-		<spring-framework.version>4.3.7.RELEASE</spring-framework.version>
+		<spring-framework.version>5.2.20.RELEASE</spring-framework.version>
 
 		<!-- Hibernate / JPA -->
 		<hibernate.version>4.2.1.Final</hibernate.version>
